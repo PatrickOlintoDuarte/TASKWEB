@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './styles.css'; // Garanta que o caminho para o CSS está correto
-// Importe a imagem que você deseja usar
-import logo from './logo.jpeg'; // Garanta que o caminho para a imagem está correto
+import './styles.css'; 
+import logo from './logo.jpeg';
 
 
 const LoginForm = () => {
@@ -10,7 +9,6 @@ const LoginForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Implemente a lógica de envio aqui
         console.log('Login submitted', { username, password });
     };
 
