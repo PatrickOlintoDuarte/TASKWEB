@@ -3,15 +3,45 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Login from "./Componentes/auth/Login";
+import Signup from "./Signup";
+import {createBrowserRouter,RouterProvider} from "react-router-dom";  
+import TelaInicial from './TelaInicial';
+import TelaAtividade from './TelaAtividade';
+import TelaGit from './Telas/UploadGit/TelaGit';
+import ConsultarMetricas from './Telas/ConsultarMetricas/ConsultarMetricas';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/teste",
+    element: <Signup />,
+  },
+  {
+    path: "/telainicial",
+    element: <TelaInicial />,
+  },
+  {
+    path: "/telaatividade",
+    element: <TelaAtividade />,
+  },
+  {
+    path: "/telagit",
+    element: <TelaGit />,
+  },
+    {
+    path: "/consultarmetricas",
+    element: <ConsultarMetricas />,
+  },
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

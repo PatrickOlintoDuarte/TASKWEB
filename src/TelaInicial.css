@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.bodyy {
+    background: linear-gradient(45deg, #ccb4e2, #b899f5);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #b587cf;
+    ;
+    color: #fff;
+    z-index: 1000;
+}
+
+.logo {
+    width: 15%;
+    max-width: 150px;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+.vector-container {
+    display: flex;
+    align-items: center;
+}
+
+.Vector {
+    height: auto;
+    width: 20%;
+    max-width: 100px;
+    margin-left: 5px;
+    transition: filter 0.3s ease; /* Adicionando uma transição para suavizar a mudança */
+}
+
+.Vector:hover {
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+h1 {
+    margin-left: 5px;
+}
+
+.BemVindo {
+    color: #A46CC4;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.campos {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px;
+}
+
+.div1 {
+    background-color: #A46CC4;
+    width: 30%;
+    max-width: 250px;
+    height: auto;
+    margin: 20px;
+    padding-top: 40px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.div1:hover {
+    background-color: #9051d8d0;
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.div1:hover img {
+    filter: grayscale(100%);
+}
+
+.div1 p {
+    color: white;
+    font-size: 1.5em;
+}

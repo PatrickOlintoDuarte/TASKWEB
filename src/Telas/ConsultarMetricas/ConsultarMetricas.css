@@ -1,0 +1,36 @@
+.tela-consulta h2 {
+    margin-bottom: 10px;
+    color: #2F1134;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 2%;
+}
+.input-container {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente */
+    margin-bottom: 10px;
+}
+
+.input-container label {
+    width: 150px; /* Largura fixa para os labels */
+    text-align: right; /* Alinha o texto à direita */
+    margin-right: 10px;
+    color: #2F1134;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.input-container input {
+    width: 400px; /* Largura fixa para os inputs */
+    padding: 5px;
+}
+
+.tela-consulta button {
+    padding: 5px 50px;
+    margin-left:60px;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to left, #2F1134, #8e54e9) ;
+    color: #fff;
+    border-radius: 15px;
+}
