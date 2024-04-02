@@ -7,13 +7,13 @@
 }
 .input-container {
     display: flex;
-    align-items: center; /* Alinha os itens verticalmente */
+    align-items: center; 
     margin-bottom: 10px;
 }
 
 .input-container label {
-    width: 150px; /* Largura fixa para os labels */
-    text-align: right; /* Alinha o texto à direita */
+    width: 150px; 
+    text-align: right; 
     margin-right: 10px;
     color: #2F1134;
     font-size: 20px;
@@ -21,7 +21,7 @@
 }
 
 .input-container input {
-    width: 400px; /* Largura fixa para os inputs */
+    width: 400px;
     padding: 5px;
 }
 
@@ -34,3 +34,32 @@
     color: #fff;
     border-radius: 15px;
 }
+
+.resultado-consulta {
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px; 
+}
+
+.resultado-consulta ul {
+    background-color: #c19ef8;
+    border-radius: 10px;
+    font-size: 17px;
+    font-family: 'Andale Mono', monospace;
+    padding: 10px;
+    list-style: none; 
+}
+
+.resultado-consulta ul li {
+    margin-bottom: 5px;
+}
+
+.resultado-consulta h2 {
+    color: #333; 
+    font-size: 24px; 
+    margin-bottom: 15px; 
+}
+
+

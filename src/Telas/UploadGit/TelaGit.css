@@ -34,3 +34,6 @@
     color: #fff;
     border-radius: 15px;
 }
+.telagit button:hover {
+    background: linear-gradient(to right, #4776E6, #8e54e9);
+}

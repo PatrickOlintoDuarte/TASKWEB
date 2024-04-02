@@ -24,10 +24,10 @@ function TelaInicial() {
         <body className='bodyy'>
           <h2 className='BemVindo'>Seja Bem Vindo!</h2>
           <div className='campos'>
-              <div className='div1'>
-                <img src={admin} alt="admin" />
-                <p>Gerenciar Analista</p>
-              </div>
+              <Link to="/gerenciaranalista" className='div1'>
+                        <img src={admin} alt="admin" />
+                        <p>Gerenciar Analista</p>
+              </Link>
               <Link to="/telaatividade" className='div1'>
                         <img src={arquivo} alt="arquivo" />
                         <p>Gerenciar Atividade</p>

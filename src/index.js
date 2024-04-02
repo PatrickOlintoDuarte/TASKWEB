@@ -10,6 +10,7 @@ import TelaInicial from './TelaInicial';
 import TelaAtividade from './TelaAtividade';
 import TelaGit from './Telas/UploadGit/TelaGit';
 import ConsultarMetricas from './Telas/ConsultarMetricas/ConsultarMetricas';
+import GerenciarAnalista from './Telas/GerenciarAnalista/GerenciarAnalista';
 
 
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
     {
     path: "/consultarmetricas",
     element: <ConsultarMetricas />,
+  },
+  {
+    path: "/gerenciaranalista",
+    element: <GerenciarAnalista />,
   },
 ])
 
