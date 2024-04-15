@@ -1,0 +1,25 @@
+/* .tela-Admin {
+    display: flex; 
+} */
+
+.menu-lateral {
+    position: fixed; /* Manter o menu fixo na posição */
+    top: 10%; /* Posição do topo da página, ajuste conforme a altura do cabeçalho */
+    left: 0; /* Posição da esquerda da página */
+    height: calc(100% - 10%); /* Ocupar a altura total da página menos a altura do cabeçalho */
+    width: 150px; /* Definir a largura do menu conforme necessário */
+    background-color: #1f2525; /* Cor de fundo do menu */
+    padding: 20px; /* Espaçamento interno do menu */
+}
+
+/* Conteúdo principal após o menu lateral */
+.conteudo-principal {
+    margin-left: 200px; /* Deixar espaço para o menu lateral */
+    padding: 20px; /* Espaçamento interno do conteúdo principal */
+    margin-top: 60px; /* Compensar a altura do cabeçalho */
+}
+
+.menu-lateral li {
+    color: aliceblue;
+}
+/* Estilos adicionais conforme necessário */

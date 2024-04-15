@@ -2,19 +2,25 @@ import React, { useState } from 'react';
 import { auth } from './firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './Signup.css';
-import logo from './Componentes/auth/logo.jpeg';
+import logo from './imgs/Logo.png';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
 
     const handleSignup = (e) => {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 console.log(userCredential);
-                // Aqui você pode redirecionar o usuário para a página de login ou qualquer outra página desejada após o cadastro bem-sucedido
+                setSuccessMessage('Cadastro realizado com sucesso!');
+                setEmail('');
+                setPassword('');
+                setTimeout(() => {
+                    setSuccessMessage('');
+                }, 3000); // Limpa a mensagem após 3 segundos
             }).catch((error) => {
                 console.log(error);
             });
@@ -23,8 +29,9 @@ const Signup = () => {
     return (
         <div className="sign-up-container">
             <form onSubmit={handleSignup}>
-            <img src={logo} alt="Logo" className="logo-img" />
-            <h2>Cadastro</h2>
+                <img src={logo} alt="Logo" className="logo-img" />
+                <h2>Cadastro</h2>
+                {successMessage && <p className="success-message">{successMessage}</p>}
                 <div className="input-field">
                     <input
                         type="email"

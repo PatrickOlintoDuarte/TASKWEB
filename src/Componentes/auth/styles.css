@@ -20,7 +20,7 @@ body {
 }
 
 .sign-in-container {
-    background: #ad89c2;
+    background: #023436;
     min-width: 320px;
     min-height: 40vh;
     padding: 2rem;
@@ -50,8 +50,8 @@ form {
     flex-direction: column;
 }
 .logo-img {
-    width: 148px;
-    height: 78px;
+    width: 70px;
+    height: 70px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -119,7 +119,7 @@ form .input-field:first-child {
     padding: 0.4rem;
     width: 100%;
     height: 40px;
-    background: linear-gradient(to left, #2F1134, #8e54e9);
+    background: linear-gradient(to left, #049a8f, #049a8f);
     cursor: pointer;
     color: white;
     font-size: 0.9rem;
@@ -130,6 +130,7 @@ form .input-field:first-child {
 p {
     text-align: center;
     margin-top: 10px;
+    color: #fff;
 }
 .login-button[type="submit"]:hover {
     letter-spacing: 0.5px;

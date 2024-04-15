@@ -3,7 +3,7 @@ import { auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import './styles.css';
-import logo from './logo.jpeg';
+import Logo from '../../imgs/Logo.png';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -25,7 +25,7 @@ const Login = () => {
     return (
         <div className="sign-in-container">
             <form onSubmit={handleLogin}>
-                <img src={logo} alt="Logo" className="logo-img" />
+                <img src={Logo} alt="Logo" className="logo-img" />
                 <div className="input-field">
                     <input
                         type="email"
@@ -43,7 +43,7 @@ const Login = () => {
                     />
                 </div>
                 {error && <p className="error-message">{error}</p>}
-                <button type="submit" className="login-button">Logar</button>
+                <button type="submit" className="login-button">Entrar</button>
             </form>
             <p>Não possui uma conta? <Link to="/teste">Crie uma conta</Link>.</p>
         </div>

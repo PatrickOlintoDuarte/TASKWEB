@@ -2,8 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './TelaGit.css'; 
-import logo from '../../Componentes/auth/logo.jpeg';
-import Vector from '../../imgs/Vector.png';
+import Header from '../../Header/Header.js';
 
 function TelaGit() {
   const [projeto, setProjeto] = useState('');
@@ -32,14 +31,9 @@ function TelaGit() {
   };
 
   return (
+    <div>
+      <Header />
     <div className='telagit'>
-        <header>
-          <img src={logo} alt="Logo" className="logo" />
-          <div className="vector-container">
-              <img src={Vector} alt="Vector" className="Vector" />
-              <h1>ADMIN</h1>
-          </div>
-        </header>
     <body className='bodyy'>
       <form onSubmit={handleSubmit}>
         <h2>Insira as Informações</h2>
@@ -76,6 +70,7 @@ function TelaGit() {
       </form>
       </body>
     </div>
+  </div>
   );
 }
 

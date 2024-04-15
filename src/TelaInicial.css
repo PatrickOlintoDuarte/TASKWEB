@@ -9,63 +9,25 @@
 }
 
 .bodyy {
-    background: linear-gradient(0deg, #fdfdfd, #e6dcdc);
-    background-repeat: no-repeat;
+    background: linear-gradient(0deg, #023436, #049a8f);
+    background-image: url('./imgs/bodyy.png');
+    background-repeat: repeat;
+    /* background: linear-gradient (0deg, #161934, #161935) ; */
     min-height: 100vh;
-    min-width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: margin-left 0.5s; /* Adicionando transição para o movimento do sidebar */
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #b587cf;
-    color: #fff;
-    z-index: 1000;
-}
-
-.logo {
-    width: 15%;
-    max-width: 150px;
-    margin-left: 5%;
-    margin-top: 10px;
-}
-
-.vector-container {
-    display: flex;
-    align-items: center;
-}
-
-.Vector {
-    height: auto;
-    width: 20%;
-    max-width: 100px;
-    margin-left: 5px;
-    transition: filter 0.3s ease;
-}
-
-.Vector:hover {
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-}
-
-h1 {
-    margin-left: 5px;
-}
 
 .BemVindo {
-    color: #bd80e0;
+    color: #fff;
     font-size: 2em;
     margin-bottom: 20px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
 }
 
 .campos {
@@ -77,8 +39,8 @@ h1 {
 }
 
 .div1 {
-    background-color: #A46CC4;
-    width: 30%;
+    background-color: #023436; 
+    width: 90%; /* Largura ajustada */
     max-width: 250px;
     height: auto;
     margin: 20px;
@@ -91,13 +53,15 @@ h1 {
 
 .div1 p{
     margin: 10px;
+    font-family: "Ubuntu", sans-serif;
 }
-
+.div1 img{
+    width: 100px;
+}
 .div1:hover {
     transform: translateY(-5px);
-    background-color: #bd80f3ea;
-    cursor: pointer; 
-    transition: background-color 0.7s ease; 
+    background-color: #049a8f;
+    cursor: pointer;
 }
 
 .div1:hover img {
@@ -107,4 +71,21 @@ h1 {
 .div1 p {
     color: white;
     font-size: 1.5em;
+}
+
+/* Media Query para telas menores */
+@media only screen and (max-width: 768px) {
+    .logo {
+        margin-left: 10px; /* Ajustar conforme necessário */
+        margin-right: 10px; /* Ajustar conforme necessário */
+    }
+
+    .Vector {
+        width: 30%;
+    }
+
+    .div1 {
+        width: 45%; /* Ajustar conforme necessário */
+        margin: 10px;
+    }
 }

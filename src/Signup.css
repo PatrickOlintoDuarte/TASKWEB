@@ -10,8 +10,8 @@
 }
 
 body {
-    background: linear-gradient(45deg, #E9E5F3, #4a00e0);
-    background-repeat: no-repeat;
+    background-image: url('./imgs/bodyy.png');
+    background-repeat: repeat;
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
@@ -20,7 +20,7 @@ body {
 }
 
 .sign-up-container {
-    background: #ad89c2;
+    background: #023436;
     min-width: 320px;
     min-height: 40vh;
     padding: 2rem;
@@ -28,10 +28,11 @@ body {
     border-radius: 8px;
 }
 
-main h2 {
+.sign-up-container h2 {
     font-weight: 600;
     margin-bottom: 2rem;
     position: relative;
+    color: #fff;
 }
 
 main h2::before {
@@ -50,8 +51,8 @@ form {
     flex-direction: column;
 }
 .logo-img {
-    width: 148px;
-    height: 78px;
+    width: 70px;
+    height: 70px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -120,7 +121,7 @@ form .input-field:first-child {
     padding: 0.4rem;
     width: 100%;
     height: 40px;
-    background: linear-gradient(to left, #2F1134, #8e54e9);
+    background: linear-gradient(to left, #049a8f, #049a8f);
     cursor: pointer;
     color: white;
     font-size: 0.9rem;

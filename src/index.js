@@ -11,6 +11,7 @@ import TelaAtividade from './TelaAtividade';
 import TelaGit from './Telas/UploadGit/TelaGit';
 import ConsultarMetricas from './Telas/ConsultarMetricas/ConsultarMetricas';
 import GerenciarAnalista from './Telas/GerenciarAnalista/GerenciarAnalista';
+import TelaAdmin from './TelaAdmin/TelaAdmin';
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/gerenciaranalista",
     element: <GerenciarAnalista />,
+  },
+  {
+    path: "/telaAdmin",
+    element: <TelaAdmin />,
   },
 ])
 

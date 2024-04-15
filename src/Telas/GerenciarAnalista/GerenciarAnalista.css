@@ -1,32 +1,38 @@
-.bodyy {
-    background: linear-gradient(0deg, #b294c2, #ffffff);
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    min-width: 100vw;
+.gerenciaranalista h2 {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 3em; /* Alterado para unidade em para ser responsivo */
+    text-align: center;
+    margin-bottom: 2%;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+}
+
+.gerenciaranalista div {
+    display: flex;
+    align-items: center; /* Alinhar verticalmente */
+    margin-bottom: 10px;
+}
+
+.gerenciaranalista label {
+    width: 150px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+    color: #fff;
+    font-size: 16 px;
+    font-weight: bolder;
+}
+
+.gerenciaranalista div > div {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch; /* Esticar os itens horizontalmente */
+    width: 100%;
 }
 
-.logo {
-    width: 15%;
-    max-width: 150px;
-    margin-left: 5%;
-    margin-top: 10px;
-}
-
-.Vector {
-    height: auto;
-    width: 20%;
-    max-width: 100px;
-    margin-left: 5px;
-}
 .matricula {
-    width: 410px;
-}
-.matricula input{
-    width: 100px;
+    width: 420px;
 }
 
 .gerenciaranalista input {
@@ -37,53 +43,54 @@
     box-sizing: border-box;
 }
 
-.gerenciaranalista h2 {
-    margin-bottom: 10px;
-    color: #2F1134;
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 2%;
-}
-
-.gerenciaranalista div {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.gerenciaranalista label {
-    width: 150px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    text-align: right;
-}
-
-.gerenciaranalista div > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    width: 100%;
-}
-
 .buttons button:first-child {
     margin-right: 60px;
 }
 
 .gerenciaranalista button {
-    padding: 5px 50px;
-    /* margin-left: 45px; */
+    padding: 0.5em 2em; /* Alterado para unidades em para ser responsivo */
     cursor: pointer;
     border: none;
-    background: linear-gradient(to left, #2F1134, #8e54e9) ;
+    background: linear-gradient(to left, #049a8f, #049a8f);
     color: #fff;
-    border-radius: 15px;
+    border-radius: 0.5em; /* Alterado para unidades em para ser responsivo */
 }
 
 .gerenciaranalista button:hover {
-    background: linear-gradient(to right, #4776E6, #8e54e9);
+    background: linear-gradient(to right, #4776E6, #049a8f);
 }
 
 .error-message {
     color: red;
     font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .gerenciaranalista div {
+        flex-direction: column; /* Empilhar os itens verticalmente em telas pequenas */
+        align-items: flex-start; /* Alinhamento à esquerda em telas pequenas */
+    }
+
+    .gerenciaranalista label {
+        width: auto; /* Largura automática para ocupar apenas o espaço necessário */
+        margin-right: 0;
+        margin-bottom: 5px; /* Espaçamento entre os rótulos */
+        text-align: left; /* Alinhamento à esquerda */
+    }
+
+    .matricula {
+        width: 50%; /* Reduzindo ainda mais o tamanho do input da matrícula para telas menores */
+    }
+
+    .gerenciaranalista input {
+        width: 100%; /* Reduzindo a largura do input para se ajustar à tela */
+        /* O 170px é a soma da largura do label (150px) mais a margem entre o label e o input (10px) */
+    }
+
+
+    .buttons button:first-child {
+        margin-right: 0;
+        margin-bottom: 10px;
+        align-items: center;
+    }
 }

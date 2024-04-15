@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
 import { firebaseConfig } from '../../firebase';
 import './ConsultarMetricas.css'; 
-import logo from '../../Componentes/auth/logo.jpeg';
-import Vector from '../../imgs/Vector.png';
+import Header from '../../Header/Header.js';
 
 const db = getFirestore();
 
@@ -28,14 +27,9 @@ const ConsultarMetricas = () => {
     };
 
     return (
+        <div>
+        <Header />
         <div className="tela-consulta">
-            <header>
-                <img src={logo} alt="Logo" className="logo" />
-                <div className="vector-container">
-                    <img src={Vector} alt="Vector" className="Vector" />
-                    <h1>ADMIN</h1>
-                </div>
-            </header>
             <body className='bodyy'>
                 <h2>Consulta de Atividades</h2>
                 <div>
@@ -64,6 +58,7 @@ const ConsultarMetricas = () => {
                 )}
             </body>
         </div>
+    </div>
     );
 }
 

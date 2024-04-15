@@ -1,6 +1,6 @@
 .tela-consulta h2 {
     margin-bottom: 10px;
-    color: #2F1134;
+    color: #fff;
     font-size: 30px;
     text-align: center;
     margin-bottom: 2%;
@@ -11,13 +11,14 @@
     margin-bottom: 10px;
 }
 
-.input-container label {
+.tela-consulta label {
     width: 150px; 
     text-align: right; 
     margin-right: 10px;
-    color: #2F1134;
+    color: #fff;
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
 }
 
 .input-container input {
@@ -30,9 +31,13 @@
     margin-left:60px;
     cursor: pointer;
     border: none;
-    background: linear-gradient(to left, #2F1134, #8e54e9) ;
+    background: linear-gradient(to left, #049a8f, #049a8f) ;
     color: #fff;
     border-radius: 15px;
+}
+
+.tela-consulta button:hover {
+    background: linear-gradient(to right, #4776E6, #049a8f);
 }
 
 .resultado-consulta {
@@ -42,9 +47,12 @@
     padding: 20px;
     border-radius: 10px; 
 }
-
+.resultado-consulta h3{
+    color: #fff;
+    font-weight: bold;
+}
 .resultado-consulta ul {
-    background-color: #c19ef8;
+    background-color: #2e9194;
     border-radius: 10px;
     font-size: 17px;
     font-family: 'Andale Mono', monospace;

@@ -6,6 +6,7 @@ import TelaAtividade from '../TelaAtividade';
 import TelaGit from '../Telas/UploadGit/TelaGit';
 import ConsultarMetricas from '../Telas/ConsultarMetricas/ConsultarMetricas';
 import GerenciarAnalista from '../Telas/GerenciarAnalista/GerenciarAnalista';
+import TelaAdmin from '../TelaAdmin/TelaAdmin';
 
 const Routes = () => {
     return (
@@ -17,6 +18,7 @@ const Routes = () => {
             <Route path='/telagit' component={TelaGit}/>
             <Route path='/consultarmetricas' component={ConsultarMetricas}/>
             <Route path='/gerenciaranalista' component={GerenciarAnalista}/>
+            <Route path='/telaAdmin' component={TelaAdmin}/>
         </Router>
     );
 };

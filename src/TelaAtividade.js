@@ -3,8 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { firebaseConfig } from './firebase';
 import './TelaAtividade.css'; 
-import logo from './Componentes/auth/logo.jpeg';
-import Vector from './imgs/Vector.png';
+import Header from './Header/Header.js';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -47,14 +46,9 @@ const TelaAtividade = () => {
     };
 
     return (
+        <div>
+        <Header />
         <div className="tela-atividade">
-            <header>
-                <img src={logo} alt="Logo" className="logo" />
-                <div className="vector-container">
-                    <img src={Vector} alt="Vector" className="Vector" />
-                    <h1>ADMIN</h1>
-                </div>
-            </header>
             <body className='bodyy'>
             <h2>Nova Atividade</h2>
             <div>
@@ -94,6 +88,7 @@ const TelaAtividade = () => {
             </div>
             </body>
         </div>
+    </div>
     );
 }
 

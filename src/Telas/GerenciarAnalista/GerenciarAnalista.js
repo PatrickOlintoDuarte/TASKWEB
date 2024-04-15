@@ -3,8 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, deleteDoc, doc, query, where, getDocs } from 'firebase/firestore';
 import { firebaseConfig } from '../../firebase';
 import './GerenciarAnalista.css'; 
-import logo from '../../Componentes/auth/logo.jpeg';
-import Vector from '../../imgs/Vector.png';
+import Header from '../../Header/Header.js';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -17,6 +16,12 @@ const GerenciarAnalista = () => {
     const [gestor, setGestor] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [documentoId, setDocumentoId] = useState(null); // Estado para armazenar o ID do documento
+
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
     const salvarDadosNoFirestore = async () => {
         try {
@@ -92,16 +97,12 @@ const GerenciarAnalista = () => {
             excluirDadosDoFirestore();
         }
     };
-
+    
     return (
+        <div>
+        <Header />
         <div className="gerenciaranalista">
-            <header>
-                <img src={logo} alt="Logo" className="logo" />
-                <div className="vector-container">
-                    <img src={Vector} alt="Vector" className="Vector" />
-                    <h1>ADMIN</h1>
-                </div>
-            </header>
+            
             <body className='bodyy'>
                 <h2>Dados do Analista</h2>
                 <div className='matricula'>
@@ -151,6 +152,7 @@ const GerenciarAnalista = () => {
                 </div>
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
             </body>
+        </div>
         </div>
     );
 }
