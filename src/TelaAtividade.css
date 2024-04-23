@@ -1,4 +1,5 @@
 .tela-atividade input,
+.tela-atividade select ,
 .tela-atividade textarea {
     width: 300px;
     padding: 5px;
@@ -23,11 +24,13 @@
     margin-bottom: 10px;
 }
 
+
 .tela-atividade label {
     width: 150px;
     margin-right: 10px;
     margin-bottom: 10px;
     text-align: right;
+    color: #fff;
 }
 
 .tela-atividade div > div {

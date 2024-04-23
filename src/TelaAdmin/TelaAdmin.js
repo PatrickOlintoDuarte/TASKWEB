@@ -49,19 +49,35 @@ const TelaAdmin = () => {
                     datasets: [{
                         label: 'Atividades por Analista',
                         data: Object.values(analistas),
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)', // Cor de preenchimento das barras
+                        borderColor: 'rgba(75, 192, 192, 1)', // Cor da borda das barras
                         borderWidth: 1
                     }]
                 },
                 options: {
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#fff' // Cor dos números no eixo Y
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#fff' // Cor dos números no eixo X
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#fff' // Cor dos rótulos (legendas)
+                            }
                         }
                     }
                 }
             });
+            
         }
     }, [mostrarGrafico, dadosConsulta]);
 
@@ -95,7 +111,7 @@ const TelaAdmin = () => {
                             {mostrarResultados && mostrarGrafico && ( // Renderizar somente se mostrarResultados e mostrarGrafico forem verdadeiros
                                 <div className="resultado-consulta">
                                     <h3>Resultados:</h3>
-                                    <canvas id="chart" width="300" height="300"></canvas>
+                                    <canvas id="chart" width="400" height="400"></canvas>
                                 </div>
                             )}
                         </div>
