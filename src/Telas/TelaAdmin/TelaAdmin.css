@@ -1,0 +1,44 @@
+.tela-Admin {
+    display: flex; 
+    color: #fff;
+}
+
+.menu-lateral {
+    position: fixed; /* Manter o menu fixo na posição */
+    top: 10%; /* Posição do topo da página, ajuste conforme a altura do cabeçalho */
+    left: 0; /* Posição da esquerda da página */
+    height: calc(100% - 10%); /* Ocupar a altura total da página menos a altura do cabeçalho */
+    width: 150px; /* Definir a largura do menu conforme necessário */
+    background-color: #1f2525; /* Cor de fundo do menu */
+    padding: 20px; /* Espaçamento interno do menu */
+}
+
+.menu-lateral li {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.resultado-consulta{
+    width: 70%;
+    height: 70%;
+}
+/* Conteúdo principal após o menu lateral */
+.conteudo-principal {
+    margin-left: 200px; /* Deixar espaço para o menu lateral */
+    padding: 20px; /* Espaçamento interno do conteúdo principal */
+    margin-top: 60px; /* Compensar a altura do cabeçalho */
+}
+.lista-analistas li{
+  color: black;
+}
+
+  /* canvas#chart {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+  } */
+  
+
+
+
+/* Estilos adicionais conforme necessário */

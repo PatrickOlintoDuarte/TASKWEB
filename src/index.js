@@ -11,7 +11,7 @@ import TelaAtividade from './TelaAtividade';
 import TelaGit from './Telas/UploadGit/TelaGit';
 import ConsultarMetricas from './Telas/ConsultarMetricas/ConsultarMetricas';
 import GerenciarAnalista from './Telas/GerenciarAnalista/GerenciarAnalista';
-import TelaAdmin from './TelaAdmin/TelaAdmin';
+import TelaAdmin from './Telas/TelaAdmin/TelaAdmin';
 
 
 const router = createBrowserRouter([
