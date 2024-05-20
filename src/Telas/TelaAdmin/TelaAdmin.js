@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, doc, getDoc } from 'firebase/firestore';
 import { firebaseConfig } from '../../firebase';
 import './TelaAdmin.css'; 
 import Header from '../../Header/Header.js';
@@ -17,6 +17,8 @@ const TelaAdmin = () => {
     const [opcaoSelecionada, setOpcaoSelecionada] = useState('');
     const [analistas, setAnalistas] = useState([]);
     const [gestoresData, setGestoresData] = useState({});
+    const [atividades, setAtividades] = useState([]);
+    const [atividadeSelecionada, setAtividadeSelecionada] = useState(null); // Novo estado para atividade selecionada
 
     const consultarDados = async () => {
         try {
@@ -54,6 +56,47 @@ const TelaAdmin = () => {
             }
         });
         setGestoresData(gestores);
+    };
+
+    const buscarAtividades = async () => {
+        try {
+            const querySnapshot = await getDocs(collection(db, 'atividades'));
+            const atividadesData = [];
+            querySnapshot.forEach((doc) => {
+                atividadesData.push({ id: doc.id, motivo: doc.data().motivo }); // Apenas o campo motivo
+            });
+            setAtividades(atividadesData);
+        } catch (error) {
+            console.error("Erro ao buscar as atividades: ", error);
+        }
+    };
+
+    const formatarData = (timestamp) => {
+        const date = new Date(timestamp.seconds * 1000);
+        return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+    };
+
+    const buscarAtividadeCompleta = async (atividadeId) => {
+        try {
+            const docRef = doc(db, 'atividades', atividadeId);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+                const atividadeCompleta = {
+                    id: docSnap.id,
+                    motivo: data.motivo,
+                    dataTermino: formatarData(data.dataTermino),
+                    nomeAnalista: data.nomeAnalista,
+                    status: data.status,
+                    descricao: data.descricao
+                };
+                setAtividadeSelecionada(atividadeCompleta);
+            } else {
+                console.error("Documento não encontrado!");
+            }
+        } catch (error) {
+            console.error("Erro ao buscar a atividade completa: ", error);
+        }
     };
 
     useEffect(() => {
@@ -168,13 +211,17 @@ const TelaAdmin = () => {
         setOpcaoSelecionada(opcao); 
         if (opcao === 'Atividades') {
             setMostrarGraficoAtividades(true); 
-            setMostrarGraficoUsuariosAtivos(false); // Garantir que apenas um gráfico seja mostrado por vez
+            setMostrarGraficoUsuariosAtivos(false);
         } else if (opcao === 'Gestores') {
             setMostrarGraficoAtividades(false);
             setMostrarGraficoUsuariosAtivos(true);
         } else {
             setMostrarGraficoAtividades(false);
             setMostrarGraficoUsuariosAtivos(false); 
+        }
+        if (opcao === 'Chamados') {
+            buscarAtividades();
+            setAtividadeSelecionada(null); // Resetar a atividade selecionada ao mudar para 'Chamados'
         }
     };
 
@@ -248,7 +295,31 @@ const TelaAdmin = () => {
                     )}
                     {opcaoSelecionada === 'Chamados' && (
                         <div>
-                            <h2>Conteúdo da Opção 1</h2>
+                            <h2>Chamados</h2>
+                            {!atividadeSelecionada ? (
+                                <div className="lista-atividades">
+                                    {atividades.map((atividade, index) => (
+                                        <div 
+                                            key={index} 
+                                            className="atividade"
+                                            onClick={() => buscarAtividadeCompleta(atividade.id)}
+                                        >
+                                            <p><strong>Motivo:</strong> {atividade.motivo}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <div className="atividade-completa">
+                                    <h2>Detalhes da Atividade</h2>
+                                    <p><strong>ID:</strong> {atividadeSelecionada.id}</p>
+                                    <p><strong>Motivo:</strong> {atividadeSelecionada.motivo}</p>
+                                    <p><strong>Data Término:</strong> {atividadeSelecionada.dataTermino}</p>
+                                    <p><strong>Nome do Analista:</strong> {atividadeSelecionada.nomeAnalista}</p>
+                                    <p><strong>Status:</strong> {atividadeSelecionada.status}</p>
+                                    <p><strong>Descrição:</strong> {atividadeSelecionada.descricao}</p>
+                                    <button onClick={() => setAtividadeSelecionada(null)}>Voltar</button>
+                                </div>
+                            )}
                         </div>
                     )}
                     {opcaoSelecionada === 'Atualizações' && (
