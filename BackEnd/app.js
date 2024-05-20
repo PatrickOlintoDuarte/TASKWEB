@@ -36,6 +36,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
       console.log('Arquivo commitado com sucesso.');
 
       // Faça o push para o repositório remoto
+      await git.addRemote('origin', 'https://github.com/PatrickOlintoDuarte/Teste.git'); // Adicione a URL do repositório
       await git.push('origin', branch);
 
       console.log('Arquivo enviado e push realizado com sucesso.');
